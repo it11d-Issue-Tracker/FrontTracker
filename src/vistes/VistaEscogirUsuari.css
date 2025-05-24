@@ -1,0 +1,44 @@
+/* VistaEscogirUsuari.css */
+
+body {
+    background-color: #ececec;
+}
+
+.vistaEscogirUsuari {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 2rem;
+  background-color: #7ae4d4;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.h1Usuari {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.pUsuari {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+select {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease;
+}
+
+select:focus {
+  border-color: #0077ff;
+  outline: none;
+  background-color: #fff;
+}
