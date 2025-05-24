@@ -8,12 +8,12 @@ export default function Dropdown({ options, value, onChange, placeholder }) {
       onChange={onChange} 
       className="Dropdown"
     >
-    <option value="">{placeholder || "Selecciona una opción"}</option>
-      {/*{options.map((option) => (
+    <option key="?" value="?">{placeholder || "Selecciona una opción"}</option>
+      {options.map((option) => (
         <option key={option.id} value={option.id}>
           {option.name}
         </option>
-      ))}*/}
+      ))}
     </select>
   )
 }
