@@ -3,11 +3,15 @@ import React, { useState } from "react";
 import './VistaEscogirUsuari.css'
 import { users } from "../data/users";
 import { useAuth } from "../AuthContext";
+import { useNavigate } from "react-router-dom";
+
 
 
 export default function VistaEscogirUsuari() {
     const [selectedId, setSelectedId] = useState("")
     const { setApiKey } = useAuth();
+
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setSelectedId((e.target.value));
@@ -18,6 +22,7 @@ export default function VistaEscogirUsuari() {
         const user = users.find(u => u.id === parseInt(selectedId));
         if (user) {
             setApiKey(user.apiKey);
+            navigate("/issues")
         } else {
             alert("ApiKey no vàlida.")
         }
