@@ -2,16 +2,19 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import VistaEscogirUsuari from './vistes/VistaEscogirUsuari'
 import { AuthProvider } from './AuthContext';
 
 function App() {
   return (
-    <div>
+    <Router>
       <AuthProvider>
-        <VistaEscogirUsuari/>
+        <Routes>
+          <Route path="/" element={<VistaEscogirUsuari />} />
+        </Routes>
       </AuthProvider>
-    </div>
+    </Router>
   )
 }
 
