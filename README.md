@@ -38,7 +38,7 @@ Puedes ver el código del backend en este repositorio:
 
 - Samuel (2amu)
 - Shence (@usuarioGitHub)
-- Marti (@usuarioGitHub)
+- Marti (matrix1414)
 - Daniel 
 
 ## 🗂️ Estructura del proyecto
