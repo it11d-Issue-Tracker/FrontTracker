@@ -1,8 +1,8 @@
-import Dropdown from "../Components/Dropdown";
+import Dropdown from "./Dropdown.jsx";
 import React, { useState } from "react";
-import './VistaEscogirUsuari.css'
-import { users } from "../data/users";
-import { useAuth } from "../AuthContext";
+import '../vistes/VistaEscogirUsuari.css'
+import { users } from "../data/users.js";
+import { useAuth } from "../AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 
 
