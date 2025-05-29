@@ -1,21 +1,25 @@
-import { PureComponent, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import VistaEscogirUsuari from './Components/VistaEscogirUsuari.jsx';
+import VistaPerfil from './Components/VistaPerfil.jsx';
 import { AuthProvider } from './AuthContext';
+import './App.css';
+
+const VistaPerfilWrapper = () => {
+    const { id } = useParams();
+    return <VistaPerfil idUsuari={id} />;
+};
 
 function App() {
-  return (
-    <Router>
-      <AuthProvider>
-        <Routes>
-          <Route path="/" element={<VistaEscogirUsuari />} />
-        </Routes>
-      </AuthProvider>
-    </Router>
-  )
+    return (
+        <Router>
+            <AuthProvider>
+                <Routes>
+                    <Route path="/" element={<VistaEscogirUsuari />} />
+                    <Route path="/perfil/:id" element={<VistaPerfilWrapper />} />
+                </Routes>
+            </AuthProvider>
+        </Router>
+    );
 }
 
-export default App
+export default App;

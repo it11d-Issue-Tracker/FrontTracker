@@ -1,0 +1,289 @@
+/* Contenedor principal */
+.perfil-page {
+    display: flex;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100vh; /* altura completa de la ventana */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 30px;
+    background: #f9fafb;
+    color: #333;
+}
+
+/* Lado izquierdo con ancho fijo pero adaptable */
+.perfil-left {
+    flex: 0 0 300px;
+    padding: 25px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    min-width: 220px;
+}
+
+/* Imagen perfil con tamaño adaptable y sombra */
+.perfil-img-large {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Nombre */
+.perfil-left h2 {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+/* Username más sutil */
+.username {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    word-wrap: break-word;
+}
+
+/* Estadísticas estilo tarjetas pequeñas */
+.perfil-counts {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.perfil-counts div {
+    background: #ecf0f1;
+    padding: 12px 10px;
+    border-radius: 6px;
+    flex: 1;
+    box-shadow: inset 0 -2px 0 #bdc3c7;
+}
+
+.perfil-counts strong {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #34495e;
+}
+
+.perfil-counts span {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    margin-top: 4px;
+    line-height: 1.2;
+}
+
+/* Biografía */
+.perfil-bio {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    min-height: 60px;
+}
+
+/* Botón editar bio */
+.edit-bio-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+}
+
+.edit-bio-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Lado derecho flexible */
+.perfil-right {
+    flex: 1 1 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+/* Pestañas estilo Taiga */
+.tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1;
+    flex-wrap: wrap;
+}
+
+.tabs button {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 15px;
+    flex: 1 1 auto;
+    min-width: 140px;
+    text-align: center;
+    color: #34495e;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.tabs button:hover {
+    color: #2980b9;
+}
+
+.tabs button.active {
+    border-color: #2980b9;
+    color: #2980b9;
+}
+
+/* Tablas issues y comments */
+.issues-table,
+.comments-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    min-width: 650px;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.issues-table th,
+.issues-table td,
+.comments-table th,
+.comments-table td {
+    border-bottom: 1px solid #ecf0f1;
+    padding: 12px 10px;
+    text-align: left;
+    word-break: break-word;
+}
+
+.issues-table th,
+.comments-table th {
+    background-color: #f4f6f8;
+    font-weight: 600;
+    color: #34495e;
+}
+
+/* Media Query para móviles: apilar columnas */
+@media (max-width: 768px) {
+    .perfil-page {
+        flex-direction: column;
+        height: auto;
+        max-width: 100%;
+        padding: 15px 10px;
+    }
+
+    .perfil-left {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        min-width: auto;
+        padding-bottom: 25px;
+    }
+
+    .perfil-right {
+        padding: 15px 0 0 0;
+        overflow-x: visible;
+    }
+
+    .tabs {
+        justify-content: center;
+    }
+
+    .tabs button {
+        min-width: auto;
+        flex: none;
+        padding: 10px 16px;
+        font-size: 1rem;
+    }
+
+    .issues-table,
+    .comments-table {
+        min-width: 100%;
+        font-size: 0.85rem;
+    }
+}
+
+/* Formulario edición bio y URL */
+.edit-form {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.edit-form label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #34495e;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.edit-form textarea,
+.edit-form input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.edit-form textarea:focus,
+.edit-form input[type="text"]:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.edit-buttons button {
+    flex: 1;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-buttons button:first-child {
+    background-color: #27ae60;
+    color: white;
+}
+
+.edit-buttons button:first-child:hover {
+    background-color: #219150;
+}
+
+.edit-buttons button:last-child {
+    background-color: #c0392b;
+    color: white;
+}
+
+.edit-buttons button:last-child:hover {
+    background-color: #a92b23;
+}
+
