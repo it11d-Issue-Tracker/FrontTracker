@@ -5,6 +5,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import VistaEscogirUsuari from './Components/VistaEscogirUsuari.jsx';
 import { AuthProvider } from './AuthContext';
+import VistaLlistarIssues from './Components/VistaLlistatIssues.jsx';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<VistaEscogirUsuari />} />
+          <Route path="/issues" element={<VistaLlistarIssues/>} />
         </Routes>
       </AuthProvider>
     </Router>

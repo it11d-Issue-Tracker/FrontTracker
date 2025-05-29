@@ -24,7 +24,7 @@ export const fetchPriorities = async (apiKey) => {
 };
 
 export const fetchTypes = async (apiKey) => {
-    const res = await axios.get(`${API_BASE_URL}/settings/priority`, {
+    const res = await axios.get(`${API_BASE_URL}/settings/type`, {
       headers: { Authorization: `Token ${apiKey}` },
     });
     return res.data;
