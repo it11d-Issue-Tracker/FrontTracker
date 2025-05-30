@@ -36,7 +36,7 @@ function App() {
                         <Route path="/" element={<VistaEscogirUsuari />} />
                         <Route path="/issues" element={<VistaLlistarIssues/>} />
                         <Route path="/issues/:issue_id" element={<VistaEditarIssue/>} />
-                        <Route path="/perfil/:id" element={<VistaPerfilWrapper />} />
+                        <Route path="/profile/:id" element={<VistaPerfilWrapper />} />
                         <Route path="/settings" element={<VistaSettings />} />
                         <Route path="/crear-issue/:id" element={<VistaCreadoraIssueWrapper />} />
                     </Routes>

@@ -50,7 +50,7 @@ export default function VistaLlistarIssues() {
   };
 
   const handleManageProfile = () => {
-    navigate(`/perfil/${userID}`);
+    navigate(`/profile/${userID}`);
   };
 
   const handleChangeUser = () => {

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 import axios from "axios";
 import { fetchSettings } from "../API/settingsApi";
+import "../vistes/VistaEditarIssue.css";
 
 export default function VistaEditarIssue() {
   const { issue_id } = useParams();
