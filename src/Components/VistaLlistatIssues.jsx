@@ -37,7 +37,6 @@ export default function VistaLlistarIssues() {
     assigned_to: "",
     type: "",
     severity: "",
-    order_by: "",
   });
 
   const handleNewIssue = () => navigate("/issues/new");
@@ -251,7 +250,11 @@ export default function VistaLlistarIssues() {
                 {issue.priority}
               </td>
               <td data-label="ID">{issue.id_issue}</td>
-              <td data-label="Títol">{issue.title}</td>
+              <td data-label="Títol">
+                <Link to={`/issues/${issue.id_issue}`} className="link-title">
+                    {issue.title}
+                </Link>
+              </td>
               <td data-label="Estat">
                 <span style={{
                   display: "inline-block",
@@ -317,8 +320,6 @@ export default function VistaLlistarIssues() {
                     onChange={(e) => setFilters({ ...filters, type: e.target.value })} />
                 <input type="text" placeholder="Severitat" value={filters.severity}
                     onChange={(e) => setFilters({ ...filters, severity: e.target.value })} />
-                <input type="text" placeholder="Ordenar (ej: -created_at)" value={filters.order_by}
-                    onChange={(e) => setFilters({ ...filters, order_by: e.target.value })} />
                 </div>
                 <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "1rem", gap: "1rem" }}>
                 <button onClick={() => setShowFilterModal(false)}>Tancar</button>

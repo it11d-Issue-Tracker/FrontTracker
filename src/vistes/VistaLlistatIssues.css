@@ -170,3 +170,14 @@ tbody tr:hover {
 .modal button:hover {
   background-color: #5fc6b9;
 }
+
+.link-title {
+  color: #162129;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-title:hover {
+  text-decoration: underline;
+  color:brown
+}
