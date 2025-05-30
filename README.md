@@ -6,7 +6,7 @@ Este es el cliente web responsive de **FrontTracker**, creado con **React + Vite
 
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
-- CSS (puede cambiar según el framework de estilos que uséis)
+- CSS
 
 ## 📦 Instalación del proyecto
 
@@ -31,28 +31,11 @@ Puedes ver el código del backend en este repositorio:
 👉 [BackTracker](https://github.com/it11d-Issue-Tracker/BackTracker.git)
 
 ## 🌍 Despliegue
-
-(⬜ Aquí se indicará la URL si el proyecto es desplegado en servicios como Vercel, Netlify, Render, etc.)
+[FrontTracker](https://fronttracker.onrender.com/)
 
 ## 👥 Autores
 
 - Samuel (2amu)
-- Shence (@usuarioGitHub)
+- Shence (ShenceZhou)
 - Marti (matrix1414)
-- Daniel 
-
-## 🗂️ Estructura del proyecto
-
-```bash
-fronttracker/
-├── public/             # Archivos públicos
-├── src/
-│   ├── components/     # Componentes React
-│   ├── api/            # Funciones de conexión con la API REST
-│   ├── App.jsx         # Componente principal
-│   └── main.jsx        # Entrada de la app
-├── index.html
-├── package.json
-├── vite.config.js
-└── README.md
-```
+- Daniel (DaniEspinalt)
