@@ -5,6 +5,10 @@ import {
     useParams,
     Link,
 } from "react-router-dom";
+import { PureComponent, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import VistaLlistarIssues from './Components/VistaLlistatIssues.jsx';
 import VistaEscogirUsuari from "./Components/VistaEscogirUsuari.jsx";
 import VistaPerfil from "./Components/VistaPerfil.jsx";
 import VistaSettings from "./Components/VistaSettings.jsx";
@@ -29,6 +33,7 @@ function App() {
                 <div>
                     <Routes>
                         <Route path="/" element={<VistaEscogirUsuari />} />
+                        <Route path="/issues" element={<VistaLlistarIssues/>} />
                         <Route path="/perfil/:id" element={<VistaPerfilWrapper />} />
                         <Route path="/settings" element={<VistaSettings />} />
                         <Route path="/crear-issue/:id" element={<VistaCreadoraIssueWrapper />} />
