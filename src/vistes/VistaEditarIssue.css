@@ -1,0 +1,139 @@
+.vista-detall-issue {
+    padding: 1.5rem 2rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 650px;
+    margin: 2rem auto;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    color: #333;
+}
+
+.vista-detall-issue h2 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #2a4365; /* blau fosc */
+}
+
+.vista-detall-issue h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #2c5282;
+}
+
+.vista-detall-issue form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.vista-detall-issue input[type="text"],
+.vista-detall-issue input[type="date"],
+.vista-detall-issue input[type="number"],
+.vista-detall-issue textarea,
+.vista-detall-issue select {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 1.5px solid #cbd5e0; /* gris clar */
+    border-radius: 6px;
+    background-color: white;
+    color: #1a202c;
+    transition: border-color 0.3s ease;
+}
+
+.vista-detall-issue input[type="text"]:focus,
+.vista-detall-issue input[type="date"]:focus,
+.vista-detall-issue input[type="number"]:focus,
+.vista-detall-issue textarea:focus,
+.vista-detall-issue select:focus {
+    outline: none;
+    border-color: #3182ce; /* blau */
+    box-shadow: 0 0 5px #63b3edaa;
+}
+
+.vista-detall-issue label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #2d3748;
+}
+
+.btn-bulk-insert {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 180px;
+    margin: 0.25rem 0;
+}
+
+.btn-bulk-insert:hover {
+    background-color: #2b6cb0;
+}
+
+.btn-new-issue {
+    background-color: #48bb78; /* verd */
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 180px;
+    align-self: flex-start;
+}
+
+.btn-new-issue:hover {
+    background-color: #38a169;
+}
+
+.btn-new-issue:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+a {
+    color: #3182ce;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Selects colors diferents per cada desplegable */
+select#status {
+    background-color: #bee3f8; /* blau clar */
+    color: #2c5282;
+}
+
+select#priority {
+    background-color: #fed7d7; /* vermell clar */
+    color: #9b2c2c;
+}
+
+select#severity {
+    background-color: #fefcbf; /* groc clar */
+    color: #744210;
+}
+
+select#type {
+    background-color: #c6f6d5; /* verd clar */
+    color: #22543d;
+}

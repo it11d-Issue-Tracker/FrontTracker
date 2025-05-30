@@ -3,7 +3,7 @@ import {useAuth} from "../AuthContext.jsx";
 import axios from "axios";
 import '../vistes/VistaPerfil.css';
 import {users} from "../data/users";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const VistaPerfil = ({ idUsuari }) => {
     const { apiKey } = useAuth();
@@ -147,7 +147,9 @@ const VistaPerfil = ({ idUsuari }) => {
                 {sortedIssues.map((issue) => (
                     <tr key={issue.id_issue}>
                         <td>#{issue.id_issue}</td>
-                        <td>{issue.title}</td>
+                        <td><Link to={`/issues/${issue.id_issue}`} className="link-title">
+                            {issue.title}
+                        </Link></td>
                         <td>{issue.type || "-"}</td>
                         <td>{issue.severity || "-"}</td>
                         <td>{issue.status}</td>
