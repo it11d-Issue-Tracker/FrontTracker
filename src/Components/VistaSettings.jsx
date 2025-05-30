@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth } from "../AuthContext.jsx";
 import "../vistes/VistaSettings.css";
+import { useNavigate } from "react-router-dom";
 
 const VistaSettings = () => {
     const { apiKey } = useAuth();
+    const navigate = useNavigate();
     const [settings, setSettings] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -303,7 +305,11 @@ const VistaSettings = () => {
         }
     };
 
-    if (loading) return <p>Carregant configuracions...</p>;
+    const handleGoBack = () => {
+        navigate(`/issues/`); // o la ruta que uses para el listado
+    };
+
+    if (loading) return <p style={{ color: "black" }}>Carregant configuracions...</p>;
     if (error) return <p style={{ color: "red" }}>{error}</p>;
     if (!settings) return null;
 
@@ -353,7 +359,9 @@ const VistaSettings = () => {
     return (
         <div className="vista-settings-container">
             <h2>Settings</h2>
-
+            <button type="button" onClick={handleGoBack} className="btn-back">
+                ← Tornar a llistat d'issues
+            </button>
             <div className="form-table-row">
                 <form className="create-form" onSubmit={handleCreateStatus}>
                     <h3>Crear Status</h3>

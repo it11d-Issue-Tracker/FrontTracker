@@ -3,6 +3,7 @@ import {useAuth} from "../AuthContext.jsx";
 import axios from "axios";
 import '../vistes/VistaPerfil.css';
 import {users} from "../data/users";
+import { useNavigate } from "react-router-dom";
 
 const VistaPerfil = ({ idUsuari }) => {
     const { apiKey } = useAuth();
@@ -10,6 +11,7 @@ const VistaPerfil = ({ idUsuari }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [activeTab, setActiveTab] = useState("assigned");
+    const navigate = useNavigate();
 
     // Estado para ordenar issues
     const [sortKey, setSortKey] = useState("id_issue");
@@ -109,6 +111,10 @@ const VistaPerfil = ({ idUsuari }) => {
             setSortKey(key);
             setSortOrder("asc");
         }
+    };
+
+    const handleGoBack = () => {
+        navigate(`/issues/`); // o la ruta que uses para el listado
     };
 
     const renderIssues = (issues) => {
@@ -222,9 +228,9 @@ const VistaPerfil = ({ idUsuari }) => {
         setUpdateMessage(null);
     };
 
-    if (loading) return <p>Carregant...</p>;
+    if (loading) return <p style={{ color: "black" }}>Carregant...</p>;
     if (error) return <div>{error}</div>;
-    if (!perfil) return <div>Carregant perfil...</div>;
+    if (!perfil) return <p style={{ color: "black" }}>Carregant perfil...</p>;
 
     return (
         <div className="perfil-page">
@@ -294,6 +300,11 @@ const VistaPerfil = ({ idUsuari }) => {
                         {updateMessage}
                     </p>
                 )}
+
+                <button type="button" onClick={handleGoBack} className="btn-back">
+                    ← Tornar a llistat d'issues
+                </button>
+
             </div>
 
             <div className="perfil-right">
