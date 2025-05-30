@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import VistaEscogirUsuari from './Components/VistaEscogirUsuari.jsx';
 import { AuthProvider } from './AuthContext';
 import VistaLlistarIssues from './Components/VistaLlistatIssues.jsx';
+import VistaEditarIssue from './Components/VistaEditarIssue.jsx';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<VistaEscogirUsuari />} />
           <Route path="/issues" element={<VistaLlistarIssues/>} />
+          <Route path="/issues/:issue_id" element={<VistaEditarIssue/>} />
         </Routes>
       </AuthProvider>
     </Router>
