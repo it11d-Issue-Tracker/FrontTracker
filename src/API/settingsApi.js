@@ -30,3 +30,11 @@ export const fetchTypes = async (apiKey) => {
     return res.data;
 };
 
+export async function fetchSettings(apiKey) {
+  const res = await axios.get("https://backtracker-3hat.onrender.com/settings/", {
+    headers: { Authorization: `Token ${apiKey}` },
+  });
+  return res.data;
+}
+
+
