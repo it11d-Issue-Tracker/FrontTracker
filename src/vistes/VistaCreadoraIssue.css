@@ -1,0 +1,130 @@
+.creadora-issue-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem 2.5rem;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50; /* Text base més blau fosc */
+}
+
+.creadora-issue-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #34495e; /* Gris blavós */
+}
+
+/* Labels una mica més subtils i consistents */
+.creadora-issue-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: #34495e;
+}
+
+/* Inputs i selects més definits, amb transicions */
+.creadora-issue-form input,
+.creadora-issue-form select,
+.creadora-issue-form textarea {
+    width: 90%;
+    padding: 0.75rem 1rem;
+    border: 1.8px solid #d1d8e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease;
+    background-color: #f9faff;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.creadora-issue-form input:focus,
+.creadora-issue-form select:focus,
+.creadora-issue-form textarea:focus {
+    outline: none;
+    border-color: #3498db; /* Blau intens */
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(52, 152, 219, 0.4);
+}
+
+/* Select amb fons clar (Taiga no fa select negre) */
+.creadora-issue-form select {
+    background-color: #f9faff;
+    color: #2c3e50;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 2rem;
+    background-image: url("data:image/svg+xml,%3Csvg fill='%233498db' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+}
+
+/* Opcions clarament llegibles */
+.creadora-issue-form option {
+    background-color: #fff;
+    color: #2c3e50;
+}
+
+/* Form row ajustada */
+.creadora-issue-form .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Labels a form-row */
+.creadora-issue-form .form-row label {
+    flex: 1 0 120px;
+    margin-bottom: 0.25rem;
+}
+
+/* Botons amb colors Taiga */
+.creadora-issue-form button {
+    width: 90%;
+    padding: 0.9rem;
+    background-color: #3498db; /* Blau Taiga */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.5);
+}
+
+.creadora-issue-form button:disabled {
+    background-color: #a3b1c2;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.creadora-issue-form button:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+/* Missatges d’èxit i error */
+.success-msg {
+    color: #27ae60;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.error-msg {
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.field-error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
