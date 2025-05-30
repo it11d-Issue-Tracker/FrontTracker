@@ -9,9 +9,13 @@ import {
   fetchTypes,
 } from "../API/settingsApi";
 import "../vistes/VistaLlistatIssues.css";
+import {users} from "../data/users.js";
 
 export default function VistaLlistarIssues() {
   const { apiKey } = useAuth();
+  const user = users.find(u => u.apiKey === apiKey);
+  const userID = user ? user.id : null; // busca el id del usuario
+
   const navigate = useNavigate();
   const [issues, setIssues] = useState([]);
   const [statuses, setStatuses] = useState({});
@@ -39,7 +43,19 @@ export default function VistaLlistarIssues() {
     severity: "",
   });
 
-  const handleNewIssue = () => navigate("/issues/new");
+  const handleNewIssue = () => navigate(`/crear-issue/${userID}`);
+
+  const handleSettings = () => {
+    navigate(`/settings`);
+  };
+
+  const handleManageProfile = () => {
+    navigate(`/perfil/${userID}`);
+  };
+
+  const handleChangeUser = () => {
+    navigate(`/`);
+  };
 
   const handleSort = (field) => {
     if (sortField === field) {
@@ -180,22 +196,31 @@ export default function VistaLlistarIssues() {
       : aValue > bValue ? -1 : 1;
   });
 
-  if (loading) return <p>Carregant...</p>;
+  if (loading) return <p style={{ color: "black" }}>Carregant...</p>;
   if (error) return <p>{error}</p>;
 
   return (
     <div className="vista-issues">
-      <div className="issues-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
-        <h1 style={{ margin: 0 }}>Llistat d'Issues</h1>
-        <div style={{ display: "flex", gap: "1rem" }}>
+      <div className="issues-header">
+        <h1>Llistat d'Issues</h1>
+        <div className="header-buttons">
           <button className="btn-bulk-insert" onClick={() => setShowFilterModal(true)}>
             Filtrar
+          </button>
+          <button className="btn-new-issue" onClick={handleNewIssue}>
+            + Nou Issue
           </button>
           <button className="btn-bulk-insert" onClick={() => setShowModal(true)}>
             Bulk Insert
           </button>
-          <button className="btn-new-issue" onClick={handleNewIssue}>
-            + Nou Issue
+          <button className="btn-bulk-insert" onClick={handleSettings}>
+            Settings
+          </button>
+          <button className="btn-bulk-insert" onClick={handleManageProfile}>
+            Perfil
+          </button>
+          <button className="btn-new-issue" onClick={handleChangeUser}>
+            Canviar Usuari
           </button>
         </div>
       </div>
@@ -273,7 +298,7 @@ export default function VistaLlistarIssues() {
                     {issue.assigned_to}
                   </Link>
                 ) : (
-                  "Sin assignar"
+                  "Sense assignar"
                 )}
               </td>
             </tr>
@@ -308,17 +333,17 @@ export default function VistaLlistarIssues() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 <input type="text" placeholder="Buscar (q)" value={filters.q}
                     onChange={(e) => setFilters({ ...filters, q: e.target.value })} />
-                <input type="text" placeholder="Estat" value={filters.status}
+                <input type="text" placeholder="Status" value={filters.status}
                     onChange={(e) => setFilters({ ...filters, status: e.target.value })} />
-                <input type="text" placeholder="Prioritat" value={filters.priority}
+                <input type="text" placeholder="Priority" value={filters.priority}
                     onChange={(e) => setFilters({ ...filters, priority: e.target.value })} />
                 <input type="number" placeholder="Creat per ID" value={filters.created_by}
                     onChange={(e) => setFilters({ ...filters, created_by: e.target.value })} />
                 <input type="number" placeholder="Assignat a ID" value={filters.assigned_to}
                     onChange={(e) => setFilters({ ...filters, assigned_to: e.target.value })} />
-                <input type="text" placeholder="Tipus" value={filters.type}
+                <input type="text" placeholder="Type" value={filters.type}
                     onChange={(e) => setFilters({ ...filters, type: e.target.value })} />
-                <input type="text" placeholder="Severitat" value={filters.severity}
+                <input type="text" placeholder="Severity" value={filters.severity}
                     onChange={(e) => setFilters({ ...filters, severity: e.target.value })} />
                 </div>
                 <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "1rem", gap: "1rem" }}>

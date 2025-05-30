@@ -46,3 +46,19 @@ select:focus {
   outline: none;
   background-color: #fff;
 }
+
+.Dropdown {
+  background-color: black;
+  color: white;
+  border: 1px solid #555;
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 100%; /* para que ocupe */
+}
+
+/* Para que las opciones tengan texto visible en negro */
+.Dropdown option {
+  background-color: black;
+  color: white;
+}
+
