@@ -1,0 +1,103 @@
+.creadora-issue-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.creadora-issue-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.creadora-issue-form label {
+    display: block;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.creadora-issue-form input,
+.creadora-issue-form select,
+.creadora-issue-form textarea {
+    width: 95%;
+    padding: 0.6rem;
+    margin-top: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.creadora-issue-form .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.creadora-issue-form .form-row label {
+    flex: 1;
+}
+
+.creadora-issue-form button {
+    width: 95%;
+    padding: 0.8rem;
+    background-color: #4CAF50;
+    color: black;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.creadora-issue-form button:disabled {
+    background-color: #9E9E9E;
+    cursor: not-allowed;
+}
+
+.creadora-issue-form button:hover:not(:disabled) {
+    background-color: #FFFFFF;
+}
+
+.success-msg {
+    color: green;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.error-msg {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.field-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.creadora-issue-form select {
+    width: 95%;
+    padding: 0.6rem;
+    margin-top: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #333; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Asegura que el texto en las opciones se vea blanco en la mayoría de navegadores */
+.creadora-issue-form option {
+    background-color: #333;
+    color: #fff;
+}
+
+
