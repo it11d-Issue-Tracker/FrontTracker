@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../AuthContext.jsx";
 import "../vistes/VistaCreadoraIssue.css";
+import { useNavigate } from "react-router-dom";
 
 const VistaCreadoraIssue = ({ userId }) => {
     const { apiKey } = useAuth();
@@ -20,6 +21,7 @@ const VistaCreadoraIssue = ({ userId }) => {
     const [successMessage, setSuccessMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [validationErrors, setValidationErrors] = useState({});
+    const navigate = useNavigate();
 
     const [severities, setSeverities] = useState([]);
     const [statuses, setStatuses] = useState([]);
@@ -109,6 +111,11 @@ const VistaCreadoraIssue = ({ userId }) => {
         }
     };
 
+    const handleGoBack = () => {
+        navigate(`/issues/`); // o la ruta que uses para el listado
+    };
+
+
     const renderSelect = (name, label, options, value) => (
         <label>
             {label}
@@ -155,6 +162,10 @@ const VistaCreadoraIssue = ({ userId }) => {
 
                 <button type="submit" disabled={loading}>
                     {loading ? "Creant..." : "Crear Issue"}
+                </button>
+
+                <button type="button" onClick={handleGoBack} className="btn-back">
+                    ← Tornar a llistat d'issues
                 </button>
 
                 {successMessage && <p className="success-msg">{successMessage}</p>}
